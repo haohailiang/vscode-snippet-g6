@@ -1,0 +1,57 @@
+{
+	"name": "vscode-snippet-g6",
+	"displayName": "G6 common snippet",
+	"description": "G6常用代码片段",
+	"version": "0.0.2",
+	"publisher": "haohailiang",
+	"author": {
+        "name": "haohailiang",
+        "email": "646263409@qq.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/haohailiang/vscode-snippet-g6.git"
+    },
+    "homepage": "https://github.com/haohailiang/vscode-snippet-g6/blob/master/README.md",
+    "bugs": {
+        "url": "https://github.com/haohailiang/vscode-snippet-g6/issues"
+    },
+    "icon": "res/icon.png",
+    "keywords": [
+        "debug"
+    ],
+	"engines": {
+		"vscode": "^1.28.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets.json"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets.json"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets.json"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets.json"
+			},
+			{
+				"language": "json",
+				"path": "./snippets.json"
+			},
+			{
+				"language": "jsonc",
+				"path": "./snippets.json"
+			}
+		]
+	}
+}
