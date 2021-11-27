@@ -2,7 +2,7 @@
     "g6-animate-stop-animate": {
         "prefix": "g6-animate-stop-animate",
         "body": [
-            "this.graph.stopAnimate()"
+            "this.graph.stopAnimate();"
         ],
         "description": "停止动画"
     },
@@ -13,7 +13,7 @@
             " * 清除画布元素",
             " * 该方法一般用于清空数据源，重新设置数据源，重新render的场景，此时所有的图形都会被清除",
             " */",
-            "this.graph.clear()",
+            "this.graph.clear();"
         ],
         "description": "清除画布"
     },
@@ -21,10 +21,10 @@
         "prefix": "g6-clearItemStates",
         "body": [
             "// 清除指定的状态",
-            "this.graph.clearItemStates(item, ['bodyState:healthy', 'selected', 'active'])",
+            "this.graph.clearItemStates(item, ['bodyState:healthy', 'selected', 'active']);",
             "",
             "// 清除全部的转台",
-            "this.graph.clearItemStates(item)"
+            "this.graph.clearItemStates(item);"
         ],
         "description": "取消多个/全部状态"
     },
@@ -37,10 +37,10 @@
             " * @param pointY 视口y坐标",
             " * @returns Canvas 画布坐标",
             " */",
-            "this.graph.getCanvasByPoint(pointX, pointY)",
+            "this.graph.getCanvasByPoint(pointX, pointY);",
             "",
-            "const model = node.getModel()",
-            "const { x: canvasX, y: canvasY } = this.graph.getCanvasByPoint(model.x, model.y)"
+            "const model = node.getModel();",
+            "const { x: canvasX, y: canvasY } = this.graph.getCanvasByPoint(model.x, model.y);"
         ],
         "description": "pointX/pointY 转 canvasX/canvasY"
     },
@@ -53,10 +53,10 @@
             " * @param pointY 视口y坐标",
             " * @returns 屏幕/页面坐标",
             " */",
-            "this.graph.getClientByPoint(pointX, pointY)",
+            "this.graph.getClientByPoint(pointX, pointY);",
             "",
-            "const model = node.getModel()",
-            "const { x: clientX, y: clientY } = this.graph.getClientByPoint(model.x, model.y)"
+            "const model = node.getModel();",
+            "const { x: clientX, y: clientY } = this.graph.getClientByPoint(model.x, model.y);"
         ],
         "description": "pointX/pointY 转 clientX/clientY"
     },
@@ -69,10 +69,10 @@
             " * @param canvasY 画布y坐标",
             " * @returns 视口坐标",
             " */",
-            "this.graph.getPointByCanvas(canvasX, canvasY)",
+            "this.graph.getPointByCanvas(canvasX, canvasY);",
             "",
-            "const point = this.graph.getPointByCanvas(canvasX, canvasY)",
-            "const { x: clientX, y: clientY } = this.graph.getClientByPoint(point.x, point.y)"
+            "const point = this.graph.getPointByCanvas(canvasX, canvasY);",
+            "const { x: clientX, y: clientY } = this.graph.getClientByPoint(point.x, point.y);"
         ],
         "description": "canvasX/canvasY 转 clientX/clientY"
     },
@@ -85,10 +85,10 @@
             " * @param clientY 屏幕y坐标",
             " * @returns 视口坐标",
             " */",
-            "this.graph.getPointByClient(clientX, clientY)",
+            "this.graph.getPointByClient(clientX, clientY);",
             "",
-            "const point = this.graph.getPointByClient(evt.clientX, evt.clientY)",
-            "const { x: canvasX, y: canvasY } = this.graph.getCanvasByPoint(point.x, point.y)"
+            "const point = this.graph.getPointByClient(evt.clientX, evt.clientY);",
+            "const { x: canvasX, y: canvasY } = this.graph.getCanvasByPoint(point.x, point.y);"
         ],
         "description": "clientX/clientY 转 canvasX/canvasY"
     },
@@ -103,7 +103,7 @@
             "    labelCfg: {",
             "      autoRotate: true,",
             "    },",
-            "  },",
+            "  },"
         ],
         "description": "default edge数据结构"
     },
@@ -151,7 +151,7 @@
     "g6-destroy": {
         "prefix": "g6-destroy",
         "body": [
-            "this.graph.destroy()"
+            "this.graph.destroy();"
         ],
         "description": "销毁画布"
     },
@@ -182,14 +182,14 @@
             " * 作者: 郝海亮",
             " * 日期: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
             " */",
-            "import G6 from '@antv/g6'",
+            "import G6 from '@antv/g6';",
             "",
             "export default () => {",
             "    G6.registerEdge('flow-line', {",
             "        draw(cfg, group) {",
-            "            const { startPoint, endPoint, source } = cfg",
-            "            const { style } = cfg",
-            "            let shape",
+            "            const { startPoint, endPoint, source } = cfg;",
+            "            const { style } = cfg;",
+            "            let shape;",
             "",
             "            shape = group.addShape('path', {",
             "                attrs: {",
@@ -202,9 +202,9 @@
             "                        ['L', endPoint.x, endPoint.y],",
             "                    ],",
             "                },",
-            "            })",
+            "            });",
             "",
-            "            return shape",
+            "            return shape;",
             "        },",
             "    })",
             "}",
@@ -216,15 +216,15 @@
         "prefix": "g6-edge-getSource",
         "body": [
             "this.graph.on('node:mouseenter', function (e) {",
-            "    const item = e.item",
+            "    const item = e.item;",
             "    graph.getEdges().forEach(function (edge) {",
             "        if (edge.getSource() === item) {",
             "            // TODO",
             "        } else if (edge.getTarget() === item) {",
             "            // TODO",
             "        }",
-            "    })",
-            "})"
+            "    });",
+            "});"
         ],
         "description": "获取起始节点和终止节点"
     },
@@ -242,8 +242,8 @@
             "        style: {",
             "            fill: 'steelblue',",
             "        },",
-            "    }",
-            "})"
+            "    };",
+            "});"
         ],
         "description": "边遍历"
     },
@@ -277,7 +277,7 @@
             "            },",
             "        },",
             "    ],",
-            "}"
+            "};"
         ],
         "description": "标签文本label及其配置labelCfg"
     },
@@ -299,7 +299,7 @@
             "            labelCfg: {},",
             "        },",
             "    ],",
-            "}"
+            "};"
         ],
         "description": "边的公共属性"
     },
@@ -326,7 +326,7 @@
             "            },",
             "        },",
             "    ],",
-            "}"
+            "};"
         ],
         "description": "公共的样式属性"
     },
@@ -343,7 +343,7 @@
             "            type: 'line',",
             "        },",
             "    ],",
-            "}"
+            "};"
         ],
         "description": "边类型-直线"
     },
@@ -352,30 +352,30 @@
         "body": [
             "<script src=\"https://cdn.bootcdn.net/ajax/libs/tween.js/18.6.4/tween.umd.min.js\"></script>",
             "",
-            "import TWEEN from '@tweenjs/tween.js'",
+            "import TWEEN from '@tweenjs/tween.js';",
             "",
             "animate = (time) => {",
-            "    requestAnimationFrame(this.animate)",
-            "    TWEEN.update(time)",
-            "}",
+            "    requestAnimationFrame(this.animate);",
+            "    TWEEN.update(time);",
+            "};",
             "",
             "moveHightPoint2Center = () => {",
-            "    requestAnimationFrame(this.animate)",
+            "    requestAnimationFrame(this.animate);",
             "    new TWEEN",
             "        .Tween({ x: sourceX, y: sourceY })",
             "        .to({ x: targetX, y: targetY }, 1000)",
             "        .easing(TWEEN.Easing.Quartic.InOut)",
             "        .onUpdate(function (object) {",
-            "            const model = targetNode.get('model')",
+            "            const model = targetNode.get('model');",
             "            // model.fx = object.x",
             "            // model.fy = object.y",
-            "            graph.updateItem(targetNode, { x: object.x, y: object.y })",
+            "            graph.updateItem(targetNode, { x: object.x, y: object.y });",
             "        })",
             "        .onComplete(function () {",
-            "            console.log('onComplete')",
+            "            console.log('onComplete');",
             "        })",
-            "        .start()",
-            "}"
+            "        .start();",
+            "};"
         ],
         "description": "elements 动画"
     },
@@ -384,10 +384,10 @@
         "body": [
             "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
             "graph.on('canvas:click', evt => {",
-            "    const { clientX, clientY } = evt",
-            "    console.log('%c clientX===', 'color:#fffbackground: red', clientX)",
-            "    console.log('%c clientY===', 'color:#fffbackground: red', clientY)",
-            "})"
+            "    const { clientX, clientY } = evt;",
+            "    console.log('%c clientX===', 'color:#fffbackground: red', clientX);",
+            "    console.log('%c clientY===', 'color:#fffbackground: red', clientY);",
+            "});"
         ],
         "description": "canvas click"
     },
@@ -415,7 +415,7 @@
             " */",
             "graph.on(eventName, evt => {",
             "    // 一些操作",
-            "})"
+            "});"
         ],
         "description": "事件对象内部的属性"
     },
@@ -450,7 +450,7 @@
             " */",
             "graph.on(nodeType:triggerType, evt => {",
             "    // 一些操作",
-            "})"
+            "});"
         ],
         "description": "通用事件类型"
     },
@@ -459,13 +459,13 @@
         "body": [
             "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
             "this.graph.on('edge:click', evt => {",
-            "    const clickEdges = this.graph.findAllByState('edge', 'click')",
+            "    const clickEdges = this.graph.findAllByState('edge', 'click');",
             "    clickEdges.forEach((ce) => {",
-            "        this.graph.setItemState(ce, 'click', false)",
-            "    })",
-            "    const edgeItem = evt.item",
-            "    this.graph.setItemState(edgeItem, 'click', true)",
-            "})"
+            "        this.graph.setItemState(ce, 'click', false);",
+            "    });",
+            "    const edgeItem = evt.item;",
+            "    this.graph.setItemState(edgeItem, 'click', true);",
+            "});"
         ],
         "description": "edge click"
     },
@@ -474,17 +474,17 @@
         "body": [
             "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
             "this.graph.on('node:click', evt => {",
-            "    const item = evt.item // 被操作的节点 item",
-            "    const shape = evt.target // 被操作的具体图形",
-            "    const name = shape.get('name') // 被点击的具体shape",
+            "    const item = evt.item; // 被操作的节点 item",
+            "    const shape = evt.target; // 被操作的具体图形",
+            "    const name = shape.get('name'); // 被点击的具体shape",
             "",
-            "    const clickNodes = this.graph.findAllByState('node', 'click')",
+            "    const clickNodes = this.graph.findAllByState('node', 'click');",
             "    clickNodes.forEach((cn) => {",
-            "        this.graph.setItemState(cn, 'click', false)",
-            "    })",
-            "    const nodeItem = evt.item",
-            "    this.graph.setItemState(nodeItem, 'click', true)",
-            "})"
+            "        this.graph.setItemState(cn, 'click', false);",
+            "    });",
+            "    const nodeItem = evt.item;",
+            "    this.graph.setItemState(nodeItem, 'click', true);",
+            "});"
         ],
         "description": "node click"
     },
@@ -496,23 +496,23 @@
             " * 为图解除某事件的所有监听",
             " * @param eventName 事件名",
             " */",
-            "this.graph.off(eventName)",
+            "this.graph.off(eventName);",
             "",
             "// 监听函数",
             "const fn1 = (evt) => {",
-            "    const item = evt.item // 被操作的节点 item",
-            "    const target = evt.target // 被操作的具体图形",
+            "    const item = evt.item; // 被操作的节点 item",
+            "    const target = evt.target; // 被操作的具体图形",
             "    // ...",
-            "}",
+            "};",
             "const fn2 = (evt) => {",
             "    // ...",
-            "}",
+            "};",
             "// 为图上的所有节点绑定点击监听",
-            "graph.on('node:click', fn1)",
-            "graph.on('node:click', fn2)",
+            "graph.on('node:click', fn1);",
+            "graph.on('node:click', fn2);",
             "",
             "// 解除上面的所有节点点击监听事件",
-            "graph.off('node:click')"
+            "graph.off('node:click');"
         ],
         "description": "为图解除所有的事件监听"
     },
@@ -520,21 +520,21 @@
         "prefix": "g6-evt-node-click-off-all-2",
         "body": [
             "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
-            "this.graph.off()",
+            "this.graph.off();",
             "",
             "// 监听函数",
             "const fn1 = (evt) => {",
             "    // ...",
-            "}",
+            "};",
             "const fn2 = (evt) => {",
             "    // ...",
-            "}",
+            "};",
             "// 为图上的所有节点绑定点击监听",
-            "this.graph.on('node:mouseenter', fn1)",
-            "this.graph.on('afteranimate', fn2)",
+            "this.graph.on('node:mouseenter', fn1);",
+            "this.graph.on('afteranimate', fn2);",
             "",
             "// 解除图上所有监听事件",
-            "this.graph.off()"
+            "this.graph.off();"
         ],
         "description": "为图解除所有监听"
     },
@@ -547,19 +547,19 @@
             " * @param eventName 事件名",
             " * @param handler 监听函数",
             " */",
-            "this.graph.off(eventName, handler)",
+            "this.graph.off(eventName, handler);",
             "",
             "// 监听函数",
             "const fn = (evt) => {",
             "    const item = evt.item // 被操作的节点 item",
             "    const target = evt.target // 被操作的具体图形",
             "    // ...",
-            "}",
+            "};",
             "// 为图上的所有节点绑定点击监听",
-            "graph.on('node:click', fn)",
+            "graph.on('node:click', fn);",
             "",
             "// 解除上面的点击监听事件，注意 fn 必须是同一个对象",
-            "graph.off('node:click', fn)"
+            "graph.off('node:click', fn);"
         ],
         "description": "为图解除指定的事件监听"
     },
@@ -568,9 +568,9 @@
         "body": [
             "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
             "this.graph.on('node:mouseenter', evt => {",
-            "    const nodeItem = evt.item",
-            "    this.graph.setItemState(nodeItem, 'hover', true)",
-            "})"
+            "    const nodeItem = evt.item;",
+            "    this.graph.setItemState(nodeItem, 'hover', true);",
+            "});"
         ],
         "description": "node mouse enter"
     },
@@ -579,9 +579,9 @@
         "body": [
             "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
             "this.graph.on('node:mouseleave', evt => {",
-            "    const nodeItem = evt.item",
-            "    this.graph.setItemState(nodeItem, 'hover', false)",
-            "})"
+            "    const nodeItem = evt.item;",
+            "    this.graph.setItemState(nodeItem, 'hover', false);",
+            "});"
         ],
         "description": "node mouse leave"
     },
@@ -595,7 +595,7 @@
             " */",
             "graph.on(node:dragover, evt => {",
             "    // 一些操作",
-            "})"
+            "});"
         ],
         "description": "node事件独有类型"
     },
@@ -609,16 +609,16 @@
             "//     {",
             "//         // 绘制节点",
             "//         drawShape: function drawShape(cfg, group) {",
-            "//             const shapeType = this.shapeType",
+            "//             const shapeType = this.shapeType;",
             "//             const style = Object.assign({}, this.getShapeStyle(cfg), {",
             "//                 x: 0,",
             "//                 y: 0,",
             "//                 r: 50,",
-            "//             })",
+            "//             });",
             "//             const shape = group.addShape(shapeType, {",
             "//                 attrs: style,",
             "//                 name: 'key-shape',",
-            "//             })",
+            "//             });",
             "//             // 绘制节点里面的小圆。点击这个小圆会显示tooltip",
             "//             group.addShape('circle', {",
             "//                 attrs: {",
@@ -629,20 +629,20 @@
             "//                     cursor: 'pointer',",
             "//                 },",
             "//                 name: 'circle-shape',",
-            "//             })",
-            "//             return shape",
+            "//             });",
+            "//             return shape;",
             "//         },",
             "//     },",
             "//     'circle',",
-            "// )",
+            "// );",
             "",
             "// graph.on('node:click', function (event) {",
-            "//     const { item } = event",
-            "//     graph.setItemState(item, 'selected', true)",
-            "// })",
+            "//     const { item } = event;",
+            "//     graph.setItemState(item, 'selected', true);",
+            "// });",
             "",
             "this.graph.on('circle-shape:click', (evt) => {",
-            "    const { item } = evt",
+            "    const { item } = evt;",
             "    graph.updateItem(item, {",
             "        label: '点击了圆',",
             "        labelCfg: {",
@@ -651,27 +651,10 @@
             "                fontSize: 16,",
             "            },",
             "        },",
-            "    })",
-            "})"
+            "    });",
+            "});"
         ],
         "description": "node上的shape监听事件"
-    },
-    "g6-init-constant": {
-        "prefix": "g6-constant",
-        "body": [
-            "/**",
-            " * 功能: TODO",
-            " * 作者: 郝海亮",
-            " * 日期: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
-            " */",
-            "",
-            "//  布局",
-            "export const nodeWidth = 40",
-            "export const nodeHeight = 72",
-            "",
-            "// ============================================= constant.js ============================================="
-        ],
-        "description": "常量文件"
     },
     "g6-init-layout": {
         "prefix": "g6-init-layout",
@@ -687,27 +670,27 @@
             "    nodeHeight,",
             "    hGap,",
             "    vGap,",
-            "} from './constant'",
+            "} from './constant';",
             "",
             "export default () => ({",
             "    type: 'compactBox',",
             "    direction: 'TB',",
             "    getId: function getId(d) {",
-            "        return d.id",
+            "        return d.id;",
             "    },",
             "    getHeight: function getHeight() {",
-            "        return nodeWidth",
+            "        return nodeWidth;",
             "    },",
             "    getWidth: function getWidth() {",
-            "        return nodeHeight",
+            "        return nodeHeight;",
             "    },",
             "    getVGap: function getVGap() {",
-            "        return vGap",
+            "        return vGap;",
             "    },",
             "    getHGap: function getHGap() {",
-            "        return hGap",
+            "        return hGap;",
             "    },",
-            "})",
+            "});",
             "",
             "// ============================================== layout.js =============================================="
         ],
@@ -734,7 +717,7 @@
             "    ['L', x + r - 2, y - r],",
             "    ['M', x, y - 2 * r + 2],",
             "    ['L', x, y - 2],",
-            "]",
+            "];",
             "",
             "/**",
             " * 生成减号 - 不带圆圈",
@@ -746,7 +729,7 @@
             "export const createMinusOnly = (x, y, r) => [",
             "    ['M', x + 2 - r, y - r],",
             "    ['L', x + r - 2, y - r],",
-            "]",
+            "];",
             "",
             "/**",
             " * 只有圆圈",
@@ -763,7 +746,7 @@
             "    // ['L', x + r - 2, y - r],",
             "    // ['M', x, y - 2 * r + 2],",
             "    // ['L', x, y - 2],",
-            "]",
+            "];",
             "",
             "/**",
             " * 生成加号 - 带圆圈",
@@ -780,7 +763,7 @@
             "    ['L', x + r - 2, y - r],",
             "    ['M', x, y - 2 * r + 2],",
             "    ['L', x, y - 2],",
-            "]",
+            "];",
             "",
             "/**",
             " * 生成减号 - 带圆圈",
@@ -797,7 +780,7 @@
             "    // ['L', x + r - 2, y - r],",
             "    ['M', x, y - 2 * r + 2],",
             "    ['L', x, y - 2],",
-            "]"
+            "];"
         ],
         "description": "自定义marker"
     },
@@ -805,19 +788,20 @@
         "prefix": "g6-init-structure",
         "body": [
             "// =============================================== header ===============================================",
-            "import G6 from '@antv/g6'",
-            "import config from 'conf'",
+            "import { _ } from 'framework/util';",
+            "import G6, { Graph, NodeConfig, EdgeConfig } from '@antv/g6';",
+            "import config from 'conf';",
             "import {",
             "    _,",
-            "} from 'framework/Util'",
-            "import registerNode from './node'",
-            "import registerEdge from './edge'",
-            "import registerLayout from './layout'",
+            "} from 'framework/Util';",
+            "import registerNode from './node';",
+            "import registerEdge from './edge';",
+            "import registerLayout from './layout';",
             "import {",
             "    // nodeWidth,",
             "    // nodeHeight,",
             "    // vGap,",
-            "} from './constant'",
+            "} from './constant';",
             "",
             "const {",
             "    constant: {",
@@ -825,85 +809,110 @@
             "            // defaultEdgeColor,",
             "        },",
             "    }",
-            "} = config",
+            "} = config;",
             "",
-            "// =============================================== render ===============================================",
-            "const { height: containerHeight } = this.props",
-            "",
-            "<div styleName=\"organize-structure\" style={{ height: containerHeight }} ref={this.graphRef} />",
-            "",
-            "OrganizeStructureDagre.propTypes = {",
-            "    data: PropTypes.object,",
-            "    height: PropTypes.number,",
+            "export interface GraphNode extends NodeConfig {",
+            "    id: string;",
             "}",
             "",
-            "OrganizeStructureDagre.defaultProps = {",
-            "    data: {},",
-            "    height: 450,",
+            "export interface GraphEdge extends EdgeConfig {",
+            "    source: string;",
+            "    target: string;",
             "}",
+            "",
+            "interface IExpandGraphProps {",
+            "    nodes: GraphNode[];",
+            "    edges: GraphEdge[];",
+            "}",
+            "",
+            "// =============================================== 静态属性 ===============================================",
+            "",
+            "graphRef: React.RefObject<HTMLDivElement>;",
+            "",
+            "graph: Graph;",
             "",
             "// ============================================= constructor =============================================",
-            "this.graphRef = React.createRef()",
-            "this.graph = null",
-            "",
+            "this.graphRef = React.createRef<HTMLDivElement>();",
+            "this.graph = undefined;",
             "",
             "// ========================================== componentDidMount ==========================================",
             "componentDidMount() {",
+            "    const { nodes } = this.props;",
+            "",
             "    if (!this.graph) {",
-            "        this.renderGraph()",
-            "        this.bindEvents()",
+            "        this.renderGraph();",
+            "        window.addEventListener('resize', _.debounce(this.handleWindowResize, 150), false);",
+            "    }",
+            "}",
+            "",
+            "// ========================================== componentDidUpdate ==========================================",
+            "componentDidUpdate(prevProps: IExpandGraphProps) {",
+            "    const { nodes: preNodes = [] } = prevProps;",
+            "    const { nodes = [] } = this.props;",
+            "",
+            "    if (preNodes?.length !== nodes?.length) {",
+            "        this.rerender();",
             "    }",
             "}",
             "",
             "// ======================================== componentWillUnmount ========================================",
             "componentWillUnmount() {",
-            "    this.graph.destroy()",
-            "    window.removeEventListener('resize', this.reRenderGraph)",
+            "    if (this.graph) {",
+            "        this.graph.destroy();",
+            "    }",
+            "    this.graphRef = React.createRef<HTMLDivElement>();",
+            "    this.graph = undefined;",
+            "    window.removeEventListener('resize', this.handleWindowResize);",
             "}",
             "",
+            "handleWindowResize = () => {",
+            "    if (this.graph) {",
+                    "const { width: containerWidth, height: containerHeight } = this.graphRef.current.getBoundingClientRect();",
+            "        this.graph.changeSize(containerWidth, containerHeight);",
+            "",
+            "        // setTimeout(() => {",
+            "        //     this.initZoom();",
+            "        // });",
+            "    }",
+            "};",
+            "",
             "// ============================================= bindEvents =============================================",
-            "/**",
-            " * 绑定事件",
-            " */",
+            "// 绑定事件",
             "bindEvents = () => {",
             "    this.graph.on('node:click', evt => {",
-            "        const model = evt.item.getModel()",
-            "        const { target: { cfg: { name: optType } } } = evt",
+            "        const model = evt.item.getModel();",
+            "        const { target: { cfg: { name: optType } } } = evt;",
             "",
             "        if (optType === 'mark-plus') {",
             "            // TODO",
             "        }",
             "    }",
-            "",
-            "    window.addEventListener('resize', _.debounce(this.reRenderGraph, 500), false)",
-            "}",
+            "};",
             "",
             "// ============================================ reRenderGraph ============================================",
-            "/**",
-            " * 重新渲染",
-            " */",
-            "reRenderGraph = () => {",
-            "    const { data } = this.props",
+            "// 重新渲染",
+            "rerender = () => {",
+            "    const { nodes } = this.props;",
             "",
-            "    if (data.nodes.length !== 0) {",
-            "        this.graph.destroy()",
-            "        this.renderGraph()",
-            "        setTimeout(() => {",
-            "            this.graph.fitView()",
-            "        }, 600)",
+            "    if (this.graph) {",
+            "        this.graph.destroy();",
+            "        this.graph = undefined;",
             "    }",
-            "}",
+            "",
+            "    if (nodes?.length) {",
+            "        this.renderGraph();",
+            "    }",
+            "};",
             "",
             "// ============================================= renderGraph =============================================",
-            "/**",
-            " * 渲染画布",
-            " */",
+            "// 渲染画布",
             "renderGraph = () => {",
             "    const { data } = this.props",
-            "    const { width: containerWidth, height: containerHeight } = this.graphRef.current.getBoundingClientRect()",
+            "    const { width: containerWidth, height: containerHeight } = this.graphRef.current.getBoundingClientRect();",
             "",
-            "    registerNode()",
-            "    registerEdge()",
+            "    registerNode();",
+            "    registerEdge();",
+            "    registerLayout();",
             "",
             "    this.graph = new G6.TreeGraph({",
             "        container: this.graphRef.current,",
@@ -927,14 +936,18 @@
             "                stroke: defaultEdgeColor,",
             "            },",
             "        },",
-            "        layout: registerLayout(),",
-            "    })",
+            "        layout: {",
+            "            type: 'preset',",
+            "        },",
+            "    });",
             "",
-            "    window.debugGraph = this.graph",
+            "    this.graph.data(data);",
+            "    this.graph.render();",
+            "    this.bindEvents();",
+            "}",
             "",
-            "    this.graph.data(data)",
-            "    this.graph.render()",
-            "}"
+            "// =============================================== render ===============================================",
+            "<div className=\"expand-graph\" ref={this.graphRef} />"
         ],
         "description": "初始化结构"
     },
@@ -946,52 +959,52 @@
             " * @param data 1. 包括nodes和edges的对象",
             " * @param data 2. 不指定该参数，则使用当前数据重新渲染",
             " */",
-            "this.graph.changeData(data)"
+            "this.graph.changeData(data);"
         ],
         "description": "根据新的数据重新渲染视图"
     },
     "g6-instance-changeSize": {
         "prefix": "g6-instance-changeSize",
         "body": [
-            "this.graph.changeSize(600, 350)"
+            "this.graph.changeSize(600, 350);"
         ],
         "description": "改变画布大小"
     },
     "g6-instance-fitCenter": {
         "prefix": "g6-instance-fitCenter",
         "body": [
-            "this.graph.fitCenter()"
+            "this.graph.fitCenter();"
         ],
         "description": "平移图到中心将对齐到画布中心，但不缩放。优先级低于fitView"
     },
     "g6-instance-fitView": {
         "prefix": "g6-instance-fitView",
         "body": [
-            "this.graph.fitView()"
+            "this.graph.fitView();"
         ],
         "description": "让画布内容适应视口"
     },
     "g6-instance-focusItem": {
         "prefix": "g6-instance-focusItem",
         "body": [
-            "this.graph.focusItem(item, animate, animateCfg)",
-            "graph.focusItem(item)",
+            "this.graph.focusItem(item, animate, animateCfg);",
+            "graph.focusItem(item);",
             "",
             "// 动画地移动",
-            "this.graph.focusItem(item, true)",
+            "this.graph.focusItem(item, true);",
             "",
             "// 动画地移动，并配置动画",
             "this.graph.focusItem(item, true, {",
             "    easing: 'easeCubic',",
             "    duration: 400,",
-            "})"
+            "});"
         ],
         "description": "使得item对齐到视口中心"
     },
     "g6-instance-getZoom": {
         "prefix": "g6-instance-getZoom",
         "body": [
-            "this.graph.getZoom()"
+            "this.graph.getZoom();"
         ],
         "description": "获取当前视口的缩放比例"
     },
@@ -1001,7 +1014,7 @@
             "/**",
             " * 重新以当前配置的属性进行一次布局",
             " */",
-            "this.graph.layout()",
+            "this.graph.layout();",
             "",
             "this.graph = new G6.Graph({",
             "    container: 'mountNode',",
@@ -1013,45 +1026,45 @@
             "    modes: {",
             "        default: ['drag-node'],",
             "    },",
-            "})",
+            "});",
             "",
             "this.graph.data({",
             "    nodes: data.nodes,",
             "    edges: data.edges.map((edge, i) => {",
-            "        edge.id = 'edge' + i",
-            "        return Object.assign({}, edge)",
+            "        edge.id = 'edge' + i;",
+            "        return Object.assign({}, edge);",
             "    }),",
-            "})",
+            "});",
             "",
-            "this.graph.render()",
+            "this.graph.render();",
             "",
             "function refreshDragedNodePosition(e) {",
             "    const model = e.item.get('model')",
-            "    model.fx = e.x",
-            "    model.fy = e.y",
-            "}",
+            "    model.fx = e.x;",
+            "    model.fy = e.y;",
+            "};",
             "",
             "this.graph.on('node:dragstart', (e) => {",
             "    // 拖动节点时重新布局",
-            "    this.graph.layout()",
-            "    refreshDragedNodePosition(e)",
-            "})",
+            "    this.graph.layout();",
+            "    refreshDragedNodePosition(e);",
+            "});",
             "",
             "this.graph.on('node:drag', (e) => {",
-            "    refreshDragedNodePosition(e)",
-            "})",
+            "    refreshDragedNodePosition(e);",
+            "});",
             "",
             "this.graph.on('node:dragend', (e) => {",
-            "    e.item.get('model').fx = null",
-            "    e.item.get('model').fy = null",
-            "})"
+            "    e.item.get('model').fx = null;",
+            "    e.item.get('model').fy = null;",
+            "});"
         ],
         "description": "重新以当前配置的属性进行一次布局"
     },
     "g6-instance-moveTo": {
         "prefix": "g6-instance-moveTo",
         "body": [
-            "this.graph.moveTo(x, y)"
+            "this.graph.moveTo(x, y);"
         ],
         "description": "采用绝对位移将画布移动到指定坐标"
     },
@@ -1062,19 +1075,19 @@
             " * 仅重新绘制画布。当设置了元素样式或状态后，通过调用 paint() 方法，让修改生效",
             " * 一般批量操作时使用",
             " */",
-            "const item = e.item",
-            "const autoPaint = this.graph.get('autoPaint')",
+            "const item = e.item;",
+            "const autoPaint = this.graph.get('autoPaint');",
             "",
-            "this.graph.setAutoPaint(false)",
-            "this.graph.setItemState(item, 'selected', true)",
+            "this.graph.setAutoPaint(false);",
+            "this.graph.setItemState(item, 'selected', true);",
             "// graph.getNodes().forEach(function (node) {",
             "//     graph.clearItemStates(node);",
             "// });",
             "// graph.getEdges().forEach(function (edge) {",
             "//     graph.clearItemStates(edge);",
             "// });",
-            "this.graph.paint()",
-            "this.graph.setAutoPaint(autoPaint)"
+            "this.graph.paint();",
+            "this.graph.setAutoPaint(autoPaint);"
         ],
         "description": "仅重新绘制画布"
     },
@@ -1085,7 +1098,7 @@
             " * 节点/边/Combo的数据项发生配置的变更时，根据新数据刷新视图",
             " * 节点/边/Combo数据的增删需要使用graph.addItem/graph.removeItem或graph.changeData",
             " */",
-            "this.graph.refresh()"
+            "this.graph.refresh();"
         ],
         "description": "根据配置重新渲染视图"
     },
@@ -1097,14 +1110,14 @@
             " * @returns {object} 1. 返回值包括所有节点和边",
             " * @returns {object} 2. { nodes: [], edges: [], groups: [], }",
             " */",
-            "this.graph.save()"
+            "this.graph.save();"
         ],
         "description": "获取图数据"
     },
     "g6-instance-translate": {
         "prefix": "g6-instance-translate",
         "body": [
-            "this.graph.translate(dx, dy)"
+            "this.graph.translate(dx, dy);"
         ],
         "description": "采用相对位移来平移画布"
     },
@@ -1116,7 +1129,7 @@
             " * @param {number} ratio 缩放比例",
             " * @param {{x, y}} center 如果为空,以元素当前位置为中心缩放",
             " */",
-            "this.graph.zoom(ratio, { x: 100, y: 100 })"
+            "this.graph.zoom(ratio, { x: 100, y: 100 });"
         ],
         "description": "改变相对缩放比例"
     },
@@ -1128,7 +1141,7 @@
             " * @param toRatio 固定比例值",
             " * @param center 如果为空,以元素当前位置为中心缩放",
             " */",
-            "this.graph.zoomTo(toRatio, { x: canvasX, y: canvasY })"
+            "this.graph.zoomTo(toRatio, { x: canvasX, y: canvasY });"
         ],
         "description": "缩放视窗窗口到一个固定比例"
     },
@@ -1164,7 +1177,7 @@
             " * @param type node | edge | group",
             " * @model 元素的数据模型",
             " */",
-            "this.graph.addItem(type, model)",
+            "this.graph.addItem(type, model);",
             "",
             "// =========== node ===========",
             "const model = {",
@@ -1178,9 +1191,9 @@
             "    style: {",
             "        fill: 'blue',",
             "    },",
-            "}",
+            "};",
             "",
-            "this.graph.addItem('node', model)",
+            "this.graph.addItem('node', model);",
             "",
             "// ========== group ==========",
             "// 当 type 为 'group' 时候，model 的数据结构如下：",
@@ -1192,9 +1205,9 @@
             "    title: {",
             "        text: '名称',",
             "    },",
-            "}",
+            "};",
             "",
-            "graph.addItem('group', model)"
+            "graph.addItem('group', model);"
         ],
         "description": "新增元素（节点，边，或节点分组）"
     },
@@ -1223,7 +1236,7 @@
             "        lineWidth: 1,",
             "        // ...",
             "    }",
-            "}"
+            "};"
         ],
         "description": "node数据结构, 在数据中为每个节点和边指定 labelCfg 可以达到为不同节点或边定制不同文本样式的目的"
     },
@@ -1236,15 +1249,15 @@
             " * 作者: 郝海亮",
             " * 日期: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
             " */",
-            "import G6 from '@antv/g6'",
-            "import config from 'conf'",
+            "import G6 from '@antv/g6';",
+            "import config from 'conf';",
             "import {",
             "    // nodeWidth,",
             "    // nodeHeight,",
-            "} from './constant'",
+            "} from './constant';",
             "import {",
             "    // createPlusOnly,",
-            "} from './marker'",
+            "} from './marker';",
             "",
             "const {",
             "    constant: {",
@@ -1253,7 +1266,7 @@
             "            // headPortraitBoxBgColor,",
             "        },",
             "    }",
-            "} = config",
+            "} = config;",
             "",
             "/**",
             " * 定义普通节点",
@@ -1275,14 +1288,14 @@
             "                    name: 'outer-box',",
             "                    // capture: true,",
             "                    draggable: true,",
-            "                })",
+            "                });",
             "",
             "                // 背景遮挡",
-            "                let maskHeight = portraitRadius",
+            "                let maskHeight = portraitRadius;",
             "                if (cfg.name && cfg.position) {",
-            "                    maskHeight = nodeHeight",
+            "                    maskHeight = nodeHeight;",
             "                } else if (cfg.name) {",
-            "                    maskHeight = nodeHeight - 14",
+            "                    maskHeight = nodeHeight - 14;",
             "                }",
             "                group.addShape('rect', {",
             "                    attrs: {",
@@ -1294,23 +1307,23 @@
             "                    },",
             "                    name: 'mask-box',",
             "                    // draggable: true,",
-            "                })",
+            "                });",
             "",
-            "                return shape",
+            "                return shape;",
             "            },",
             "            setState(name, value, item) {",
-            "                const group = item.get('group')",
-            "                const keyShape = item.getKeyShape()",
+            "                const group = item.get('group');",
+            "                const keyShape = item.getKeyShape();",
             "                if (name == 'error') {",
             "                    // return item.attr('fill') === 'red'; // 找到首个填充为红色的图形",
-            "                    const outerBox = group.find(ele => ele.get('name') === 'outer-box')",
-            "                    const marker = group.find(ele => ele.get('name') === 'add-sub-node')",
+            "                    const outerBox = group.find(ele => ele.get('name') === 'outer-box');",
+            "                    const marker = group.find(ele => ele.get('name') === 'add-sub-node');",
             "                    if (value) {",
-            "                        outerBox.attr('stroke', errorColor)",
-            "                        marker.attr('stroke', errorColor)",
+            "                        outerBox.attr('stroke', errorColor);",
+            "                        marker.attr('stroke', errorColor);",
             "                    } else {",
-            "                        outerBox.attr('stroke', outerBoxBorderColor)",
-            "                        marker.attr('stroke', addNodeColor)",
+            "                        outerBox.attr('stroke', outerBoxBorderColor);",
+            "                        marker.attr('stroke', addNodeColor);",
             "                    }",
             "                } else if (name == 'active') {",
             "                    // do something",
@@ -1318,7 +1331,7 @@
             "            }",
             "        }",
             "    )",
-            "}",
+            "};",
             "// =============================================== node.js ==============================================="
         ],
         "description": "初始化node"
@@ -1331,8 +1344,8 @@
             " * @param item 1. 元素ID",
             " * @param item 2. 元素实例",
             " */",
-            "const item = this.graph.findById('node')",
-            "this.graph.removeItem(item)"
+            "const item = this.graph.findById('node');",
+            "this.graph.removeItem(item);"
         ],
         "description": "删除元素"
     },
@@ -1350,8 +1363,8 @@
             "        style: {",
             "            fill: 'blue',",
             "        },",
-            "    }",
-            "})"
+            "    };",
+            "});"
         ],
         "description": "节点遍历"
     },
@@ -1388,7 +1401,7 @@
             "            },",
             "        },",
             "    ],",
-            "}"
+            "};"
         ],
         "description": "节点类型-圆"
     },
@@ -1419,7 +1432,7 @@
             "            },",
             "        }",
             "    }",
-            "})"
+            "});"
         ],
         "description": "标签文本label及其配置labelCfg"
     },
@@ -1442,7 +1455,7 @@
             "            labelCfg: {}, // 文本配置项",
             "        },",
             "    ],",
-            "}"
+            "};"
         ],
         "description": "节点的通用属性"
     },
@@ -1463,7 +1476,7 @@
             "            },",
             "        },",
             "    ],",
-            "}"
+            "};"
         ],
         "description": "公共的样式属性"
     },
@@ -1490,7 +1503,7 @@
             "            }",
             "        },",
             "    ],",
-            "}"
+            "};"
         ],
         "description": "节点类型-图像"
     },
@@ -1520,7 +1533,7 @@
             "            },",
             "        },",
             "    ],",
-            "}"
+            "};"
         ],
         "description": "节点类型-矩形"
     },
@@ -1532,7 +1545,7 @@
             " * @param item 元素ID或元素实例",
             " * @param model ",
             " */",
-            "this.graph.updateItem(item, model)",
+            "this.graph.updateItem(item, model);",
             "",
             "this.graph.updateItem(item, {",
             "    id: 'node',",
@@ -1554,11 +1567,11 @@
             "            },",
             "        },",
             "    },",
-            "})",
+            "});",
             "",
-            "const hasActived = item.hasState('active')",
+            "const hasActived = item.hasState('active');",
             "if (!hasActived) {",
-            "    this.graph.setItemState(item, 'hover', true)",
+            "    this.graph.setItemState(item, 'hover', true);",
             "}"
         ],
         "description": "更新默认样式&状态样式"
@@ -1566,7 +1579,7 @@
     "g6-nodeInstance-getParent": {
         "prefix": "g6-nodeInstance-getParent",
         "body": [
-            "nodeInstance.get('parent')"
+            "nodeInstance.get('parent');"
         ],
         "description": "获取tree node instance的parent实例"
     },
@@ -1578,13 +1591,13 @@
             " * @param 1. true 显示",
             " * @param 2. false 隐藏",
             " */",
-            "item.changeVisibility(visible)",
+            "item.changeVisibility(visible);",
             "",
             "// 显示元素",
-            "item.changeVisibility(true)",
+            "item.changeVisibility(true);",
             "",
             "// 隐藏元素",
-            "item.changeVisibility(false)"
+            "item.changeVisibility(false);"
         ],
         "description": "更改元素是否显示"
     },
@@ -1594,7 +1607,7 @@
             "/**",
             " * 更新或刷新等操作后，清除缓存",
             " */",
-            "item.clearCache()"
+            "item.clearCache();"
         ],
         "description": "清除缓存"
     },
@@ -1606,13 +1619,13 @@
             " * 如果不传states，则默认清除第一个状态",
             " * @param {string|array} states 要清除的元素状态名",
             " */",
-            "item.clearStates(states)",
+            "item.clearStates(states);",
             "",
             "// 清除 'selected' 状态",
-            "item.clearStates('selected')",
+            "item.clearStates('selected');",
             "",
             "// 清除 'active' 与 'hover' 状态",
-            "item.clearStates(['actived', 'hover'])"
+            "item.clearStates(['actived', 'hover']);"
         ],
         "description": "清除指定的状态"
     },
@@ -1624,13 +1637,13 @@
             " * @param enable 1. true允许触发",
             " * @param enable 2. false允许触发",
             " */",
-            "item.enableCapture(enable)",
+            "item.enableCapture(enable);",
             "",
             "// 不允许元素响应事件",
-            "item.enableCapture(false)",
+            "item.enableCapture(false);",
             "",
             "// 允许元素响应事件",
-            "item.enableCapture(true)"
+            "item.enableCapture(true);"
         ],
         "description": "是否拾取及触发该元素的交互事件"
     },
@@ -1643,7 +1656,7 @@
             " * 1. itemmodel被改变",
             " * 2. 边的位置发生改变，需要重新计算边",
             " */",
-            "item.refresh()"
+            "item.refresh();"
         ],
         "description": "刷新元素"
     },
@@ -1661,7 +1674,7 @@
             " *     centerY, // 中心点y坐标",
             " * }}",
             " */",
-            "item.getBBox()"
+            "item.getBBox();"
         ],
         "description": "获取元素的包围盒"
     },
@@ -1671,13 +1684,13 @@
             "/**",
             " * 获取元素的容器",
             " */",
-            "item.getContainer()",
+            "item.getContainer();",
             "",
             "// 获取元素的容器",
-            "const group = item.getContainer()",
+            "const group = item.getContainer();",
             "",
             "// 等价于",
-            "const group = item.get('group')"
+            "const group = item.get('group');"
         ],
         "description": "获取元素的容器"
     },
@@ -1687,16 +1700,16 @@
             "/**",
             " * 获取当前元素的所有状态的样式",
             " */",
-            "item.getCurrentStatesStyle()",
+            "item.getCurrentStatesStyle();",
             "",
-            "const styles = item.getCurrentStatesStyle()"
+            "const styles = item.getCurrentStatesStyle();"
         ],
         "description": "todo"
     },
     "g6-nodeOrEdge-getID": {
         "prefix": "g6-nodeOrEdge-getID",
         "body": [
-            "const id = item.getID()"
+            "const id = item.getID();"
         ],
         "description": "获取元素的ID"
     },
@@ -1706,13 +1719,13 @@
             "/**",
             " * 获取元素的关键形状，用于计算节点大小、连线截距等",
             " */",
-            "item.getKeyShape()",
+            "item.getKeyShape();",
             "",
             "// 获取元素的 keyShape",
-            "const keyShape = item.getKeyShape()",
+            "const keyShape = item.getKeyShape();",
             "",
             "// 等价于",
-            "const keyShape = item.get('keyShape')"
+            "const keyShape = item.get('keyShape');"
         ],
         "description": "获取元素的关键形状"
     },
@@ -1725,10 +1738,10 @@
             "item.getModel()",
             "",
             "// 获取元素的数据模型",
-            "const model = item.getModel()",
+            "const model = item.getModel();",
             "",
             "// 等价于",
-            "const model = item.get('model')"
+            "const model = item.get('model');"
         ],
         "description": "获取元素的数据模型"
     },
@@ -1738,9 +1751,9 @@
             "/**",
             " * 获取元素keyShape的样式",
             " */",
-            "item.getOriginStyle()",
+            "item.getOriginStyle();",
             "",
-            "const style = item.getOriginStyle()"
+            "const style = item.getOriginStyle();"
         ],
         "description": "获取元素keyShape的样式"
     },
@@ -1752,10 +1765,10 @@
             " * @returns {array}",
             " * 返回当前元素的所有状态，是一个字符串数组，数组中值表示元素的状态",
             " */",
-            "item.getStates()",
+            "item.getStates();",
             "",
             "// 获取元素的所有状态",
-            "const states = item.getStates()"
+            "const states = item.getStates();"
         ],
         "description": "获取当前元素的所有状态"
     },
@@ -1767,10 +1780,10 @@
             " * 返回的样式会将全局样式、默认样式和元素自定义样式合并",
             " * @param state 元素的状态名",
             " */",
-            "item.getStateStyle(state)",
+            "item.getStateStyle(state);",
             "",
             "// 获取元素的指定状态的样式",
-            "const style = item.getStateStyle('selected')"
+            "const style = item.getStateStyle('selected');"
         ],
         "description": "获取元素指定状态的样式"
     },
@@ -1781,13 +1794,13 @@
             " * 获取元素的类型",
             " * @returns node | edge",
             " */",
-            "item.getType()",
+            "item.getType();",
             "",
             "// 获取元素的类型",
-            "const type = item.getType()",
+            "const type = item.getType();",
             "",
             "// 等价于",
-            "const type = item.get('type')"
+            "const type = item.get('type');"
         ],
         "description": "获取元素的类型"
     },
@@ -1799,7 +1812,7 @@
             " * @param state 元素的状态名",
             " * @returns {bool}",
             " */",
-            "item.hasState(state)",
+            "item.hasState(state);",
             "",
             "this.graph.updateItem(item, {",
             "    id: 'node',",
@@ -1821,11 +1834,11 @@
             "            },",
             "        },",
             "    },",
-            "})",
+            "});",
             "",
-            "const hasActived = item.hasState('active')",
+            "const hasActived = item.hasState('active');",
             "if (!hasActived) {",
-            "    this.graph.setItemState(item, 'hover', true)",
+            "    this.graph.setItemState(item, 'hover', true);",
             "}"
         ],
         "description": "判断元素是否具有某种指定的状态"
@@ -1837,8 +1850,8 @@
             " * 隐藏元素",
             " * 只隐藏item自身，若需要在隐藏节点的同时隐藏相关边，应调用graph.hideItem(item)",
             " */",
-            "item.hide()",
-            "graph.paint()"
+            "item.hide();",
+            "graph.paint();"
         ],
         "description": "隐藏元素"
     },
@@ -1850,15 +1863,15 @@
             " * 2. 节点及关联边的隐藏",
             " * @param item 元素ID或元素实例",
             " */",
-            "this.graph.hideItem(item)",
+            "this.graph.hideItem(item);",
             "",
             "// 通过 ID 查询节点实例",
-            "const item = graph.findById('nodeId')",
-            "graph.hideItem(item)",
+            "const item = graph.findById('nodeId');",
+            "graph.hideItem(item);",
             "",
             "// 等价于",
-            "graph.hideItem('nodeId')",
-            "graph.paint()"
+            "graph.hideItem('nodeId');",
+            "graph.paint();"
         ],
         "description": "边、节点及相关边的隐藏"
     },
@@ -1870,7 +1883,7 @@
             " * @returns {bool} 1. true 显示",
             " * @returns {bool} 2. false 隐藏",
             " */",
-            "item.isVisible()"
+            "item.isVisible();"
         ],
         "description": "查询元素显示状态"
     },
@@ -1882,10 +1895,10 @@
             " * @param state 元素的状态名[eg: selected | hover]",
             " * @param {bool} enable",
             " */",
-            "item.setState(state, enable)",
+            "item.setState(state, enable);",
             "",
-            "item.setState('selected', true)",
-            "item.setState('actived', false)"
+            "item.setState('selected', true);",
+            "item.setState('actived', false);"
         ],
         "description": "更新元素的状态"
     },
@@ -1896,8 +1909,8 @@
             " * 只显示item自身",
             " * 显示元素。只显示item自身，若需要在显示节点的同时显示相关边，应调用graph.showItem(item)",
             " */",
-            "item.show()",
-            "graph.paint()"
+            "item.show();",
+            "graph.paint();"
         ],
         "description": "只显示item自身"
     },
@@ -1909,15 +1922,15 @@
             " * 2. 节点及关联边的显示",
             " * @param item 元素ID或元素实例",
             " */",
-            "this.graph.showItem(item)",
+            "this.graph.showItem(item);",
             "",
             "// 通过 ID 查询节点实例",
-            "const item = graph.findById('nodeId')",
-            "graph.showItem(item)",
+            "const item = graph.findById('nodeId');",
+            "graph.showItem(item);",
             "",
             "// 等价于",
-            "graph.showItem('nodeId')",
-            "graph.paint()"
+            "graph.showItem('nodeId');",
+            "graph.paint();"
         ],
         "description": "边、节点及相关边的显示"
     },
@@ -1929,8 +1942,8 @@
             " * 将元素的层级设置到最下层，即当有元素重叠时，将元素置于底层",
             " * 更改层级后需要重新绘制图",
             " */",
-            "item.toBack()",
-            "graph.paint()"
+            "item.toBack();",
+            "graph.paint();"
         ],
         "description": "置底"
     },
@@ -1942,8 +1955,8 @@
             " * 将元素的层级设置到最上层，即当有元素重叠时，将元素置于顶层",
             " * 更改层级后需要重新绘制图",
             " */",
-            "item.toFront()",
-            "graph.paint()"
+            "item.toFront();",
+            "graph.paint();"
         ],
         "description": "置顶"
     },
@@ -1955,7 +1968,7 @@
             " * 根据元素数据项，更新元素",
             " * @param model 包括数据和样式、文本",
             " */",
-            "item.update(model)",
+            "item.update(model);",
             "",
             "const model = {",
             "    id: 'node',",
@@ -1966,9 +1979,9 @@
             "    },",
             "    label: 'label',",
             "    labelCfg: {},",
-            "}",
+            "};",
             "",
-            "item.update(model)"
+            "item.update(model);"
         ],
         "description": "根据元素数据项，更新元素"
     },
@@ -1979,27 +1992,27 @@
             " * 更新元素位置，避免整体重新绘制",
             " * @param cfg 位置信息",
             " */",
-            "item.updatePosition(cfg)",
+            "item.updatePosition(cfg);",
             "",
             "// =========== 场景1 ===========",
             "const cfg = {",
             "    x: 100,",
             "    y: 200,",
-            "}",
+            "};",
             "// 由于 cfg 中存在 x 与 y，则下面操作将会使用 cfg 中的 x、y 坐标",
-            "item.updatePosition(cfg)",
+            "item.updatePosition(cfg);",
             "// 重新计算边",
-            "this.graph.refresh()",
+            "this.graph.refresh();",
             "",
             "// =========== 场景2 ===========",
             "const cfg1 = {",
             "    name: 'abc',",
             "    dept: 'antv',",
-            "}",
+            "};",
             "// 由于 cfg 中不存在 x 与 y，下面才做将会使用 item.getModel() 中的 x、y 坐标值",
-            "item.updatePosition(cfg1)",
+            "item.updatePosition(cfg1);",
             "// 重新计算边",
-            "this.graph.refresh()"
+            "this.graph.refresh();"
         ],
         "description": "更新元素位置"
     },
@@ -2013,7 +2026,7 @@
             "        duration: 500,",
             "        easing: 'linearEasing',",
             "    },",
-            "})"
+            "});"
         ],
         "description": "动画"
     },
@@ -2028,7 +2041,7 @@
             "            ......",
             "        }",
             "    }",
-            "})"
+            "});"
         ],
         "description": "默认边"
     },
@@ -2043,7 +2056,7 @@
             "            // TODO",
             "        }",
             "    }",
-            "})"
+            "});"
         ],
         "description": "默认节点"
     },
@@ -2064,7 +2077,7 @@
             "            // TODO",
             "        }",
             "    }",
-            "})",
+            "});",
             ""
         ],
         "description": "边状态"
@@ -2074,7 +2087,7 @@
         "body": [
             "this.graph = new G6.Graph({",
             "    fitCenter: true,",
-            "})"
+            "});"
         ],
         "description": "移到画布中心"
     },
@@ -2083,7 +2096,7 @@
         "body": [
             "this.graph = new G6.Graph({",
             "    fitView: true,",
-            "})"
+            "});"
         ],
         "description": "适配画布大小"
     },
@@ -2092,7 +2105,7 @@
         "body": [
             "this.graph = new G6.Graph({",
             "    fitViewPadding: [ 20, 40, 50, 20 ],",
-            "})"
+            "});"
         ],
         "description": "画布四周留白"
     },
@@ -2101,7 +2114,7 @@
         "body": [
             "this.graph = new G6.Graph({",
             "    linkCenter: true,",
-            "})"
+            "});"
         ],
         "description": "指定边是否连入节点的中心"
     },
@@ -2133,9 +2146,9 @@
             "                // },",
             "                shouldBegin: e => {",
             "                    if (e.target.get('name') === 'drag-box') {",
-            "                        return true",
+            "                        return true;",
             "                    }",
-            "                    return false",
+            "                    return false;",
             "                },",
             "            },",
             "            'drag-canvas',",
@@ -2150,11 +2163,11 @@
             "        addNode: ['click-add-node', 'click-select'],",
             "        addEdge: ['click-add-edge', 'click-select'],",
             "    },",
-            "})",
+            "});",
             "",
             "// ===== registerBehavior =====",
             "// 添加的节点数量，用于生成唯一 id",
-            "let addedNodeCount = 0",
+            "let addedNodeCount = 0;",
             "",
             "// 封装点击添加节点的交互",
             "G6.registerBehavior('click-add-node', {",
@@ -2163,20 +2176,20 @@
             "        // 监听的事件为 canvas:click，响应函数是 onClick",
             "        return {",
             "            'canvas:click': 'onClick',",
-            "        }",
+            "        };",
             "    },",
             "    // 点击事件",
             "    onClick(evt) {",
-            "        const graph = this.graph",
+            "        const graph = this.graph;",
             "        // 在图上新增一个节点",
             "        const node = this.graph.addItem('node', {",
             "            x: evt.canvasX,",
             "            y: evt.canvasY,",
             "            id: `node-addedNodeCount`, // 生成唯一的 id",
-            "        })",
-            "        addedNodeCount++",
+            "        });",
+            "        addedNodeCount++;",
             "    },",
-            "})",
+            "});",
             "",
             "// ===== registerBehavior =====",
             "// 封装点击添加边的交互",
@@ -2187,55 +2200,55 @@
             "            'node:click': 'onClick', // 监听事件 node:click，响应函数是 onClick",
             "            mousemove: 'onMousemove', // 监听事件 mousemove，响应函数是 onMousemove",
             "            'edge:click': 'onEdgeClick', // 监听事件 edge:click，响应函数是 onEdgeClick",
-            "        }",
+            "        };",
             "    },",
             "    // getEvents 中定义的 'node:click' 的响应函数",
             "    onClick(evt) {",
-            "        const node = evt.item",
-            "        const graph = this.graph",
+            "        const node = evt.item;",
+            "        const graph = this.graph;",
             "        // 鼠标当前点击的节点的位置",
-            "        const point = { x: evt.x, y: evt.y }",
-            "        const model = node.getModel()",
+            "        const point = { x: evt.x, y: evt.y };",
+            "        const model = node.getModel();",
             "        if (this.addingEdge && this.edge) {",
             "            graph.updateItem(this.edge, {",
             "                target: model.id,",
-            "            })",
+            "            });",
             "",
-            "            this.edge = null",
-            "            this.addingEdge = false",
+            "            this.edge = null;",
+            "            this.addingEdge = false;",
             "        } else {",
             "            // 在图上新增一条边，结束点是鼠标当前点击的节点的位置",
             "            this.edge = graph.addItem('edge', {",
             "                source: model.id,",
             "                target: point,",
-            "            })",
-            "            this.addingEdge = true",
+            "            });",
+            "            this.addingEdge = true;",
             "        }",
             "    },",
             "    // getEvents 中定义的 mousemove 的响应函数",
             "    onMousemove(evt) {",
             "        // 鼠标的当前位置",
-            "        const point = { x: evt.x, y: evt.y }",
+            "        const point = { x: evt.x, y: evt.y };",
             "        if (this.addingEdge && this.edge) {",
             "            // 更新边的结束点位置为当前鼠标位置",
             "            this.graph.updateItem(this.edge, {",
             "                target: point,",
-            "            })",
+            "            });",
             "        }",
             "    },",
             "    // getEvents 中定义的 'edge:click' 的响应函数",
             "    onEdgeClick(evt) {",
-            "        const currentEdge = evt.item",
+            "        const currentEdge = evt.item;",
             "        // 拖拽过程中，点击会点击到新增的边上",
             "        if (this.addingEdge && this.edge == currentEdge) {",
-            "            graph.removeItem(this.edge)",
-            "            this.edge = null",
-            "            this.addingEdge = false",
+            "            graph.removeItem(this.edge);",
+            "            this.edge = null;",
+            "            this.addingEdge = false;",
             "        }",
             "    },",
-            "})",
+            "});",
             "",
-            "this.graph.setMode(modeType)"
+            "this.graph.setMode(modeType);"
         ],
         "description": "行为模式的集合"
     },
@@ -2266,10 +2279,10 @@
             "        'bodyState:suspect': {},",
             "        'bodyState:ill': {},",
             "    }",
-            "})",
+            "});",
             "",
-            "this.graph.setItemState(item, 'click', true)",
-            "this.graph.setItemState(item, 'bodyState', 'healthy')"
+            "this.graph.setItemState(item, 'click', true);",
+            "this.graph.setItemState(item, 'bodyState', 'healthy');"
         ],
         "description": "默认节点状态"
     },
@@ -2279,7 +2292,7 @@
             "this.graph = new G6.Graph({",
             "    minZoom: 0.2, // 最小缩放比例,",
             "    maxZoom: 10, // 最大缩放比例,",
-            "})"
+            "});"
         ],
         "description": "图谱最大最小缩放比例"
     },
@@ -2292,11 +2305,11 @@
             " * @fn 查找的规则",
             " * @returns 返回第一个匹配的元素实例 | undefined",
             " */",
-            "this.graph.find(type, fn)",
+            "this.graph.find(type, fn);",
             "",
             "const findNode = this.graph.find('node', (node) => {",
-            "    return node.get('model').x === 100",
-            "})"
+            "    return node.get('model').x === 100;",
+            "});"
         ],
         "description": "根据具体规则查找单个元素"
     },
@@ -2309,11 +2322,11 @@
             " * @param fn 查找的规则",
             " * @returns 所有元素实例 | undefined",
             " */",
-            "this.graph.findAll(type, fn)",
+            "this.graph.findAll(type, fn);",
             "",
             "const nodes = this.graph.findAll('node', (node) => {",
-            "    return node.get('model').x",
-            "})"
+            "    return node.get('model').x;",
+            "});"
         ],
         "description": "查询所有满足规则的元素"
     },
@@ -2326,10 +2339,10 @@
             " * @param state 状态名称",
             " * @returns 所有指定状态的元素实例 | undefined",
             " */",
-            "this.graph.findAllByState(type, state)",
+            "this.graph.findAllByState(type, state);",
             "",
             "// 查询所有选中的元素",
-            "const nodes = this.graph.findAllByState('node', 'selected')"
+            "const nodes = this.graph.findAllByState('node', 'selected');"
         ],
         "description": "查找所有处于指定状态的元素"
     },
@@ -2341,9 +2354,9 @@
             " * @param id 元素ID",
             " * @returns 该元素实例 | undefined",
             " */",
-            "this.graph.findById(id)",
+            "this.graph.findById(id);",
             "",
-            "const node = this.graph.findById('node')"
+            "const node = this.graph.findById('node');"
         ],
         "description": "查询对应的元素实例"
     },
@@ -2355,7 +2368,7 @@
             " * 这里返回的是边的实例，而不是边的数据项",
             " * @returns {array} 所有边的实例",
             " */",
-            "this.graph.getEdges()"
+            "this.graph.getEdges();"
         ],
         "description": "获取图中所有边的实例"
     },
@@ -2367,7 +2380,7 @@
             " * 这里返回的是节点的实例，而不是节点的数据项",
             " * @returns {array} 所有节点的实例",
             " */",
-            "this.graph.getNodes()"
+            "this.graph.getNodes();"
         ],
         "description": "获取图中所有节点的实例"
     },
@@ -2384,7 +2397,7 @@
             "/**",
             " * 获取实例的属性值",
             " */",
-            "const width = shape.attr('width')",
+            "const width = shape.attr('width');",
             "",
             "/**",
             " * 批量更新实例绘图属性",
@@ -2392,7 +2405,7 @@
             "shape.attr({",
             "    fill: '#999',",
             "    stroke: '#666'",
-            "})",
+            "});",
             "",
             "/**",
             " * 设置并返回裁剪对象",
@@ -2419,12 +2432,12 @@
             "        rx, // ellipse时生效",
             "        ry,",
             "    },",
-            "})",
+            "});",
             "",
             "/**",
             " * 获取裁剪对象",
             " */",
-            "shape.getClip()"
+            "shape.getClip();"
         ],
         "description": "各图形的通用方法"
     },
@@ -2462,7 +2475,7 @@
             "    visible, // true [default]",
             "    draggable, // bool",
             "    zIndex, // 调用group.sort()可以对组内所有图形根据各自zIndex进行视觉层次的排序",
-            "})"
+            "});"
         ],
         "description": "图形样式通用属性"
     },
@@ -2478,7 +2491,7 @@
             "        img: imgUrl,",
             "    },",
             "    name: 'image-shape',",
-            "})"
+            "});"
         ],
         "description": "image Shape独有的样式"
     },
@@ -2494,7 +2507,7 @@
             "        symbol: 'triangle-down', // 内置: circle | square | diamond | triangle | triangle-down",
             "    },",
             "    name: 'marker-shape',",
-            "})",
+            "});",
             "",
             "// 使用路径自定义 symbol",
             "group.addShape('marker', {",
@@ -2507,7 +2520,7 @@
             "        },",
             "    },",
             "    name: 'marker-shape',",
-            "})"
+            "});"
         ],
         "description": "marker Shape独有的样式"
     },
@@ -2551,7 +2564,7 @@
             "        miterLimit,",
             "    },",
             "    name: 'path-shape',",
-            "})"
+            "});"
         ],
         "description": "path Shape独有的样式"
     },
@@ -2568,7 +2581,7 @@
             "        radius: [2, 4],",
             "    },",
             "    name: 'rect-shape',",
-            "})"
+            "});"
         ],
         "description": "rect Shape独有的样式"
     },
@@ -2604,7 +2617,7 @@
             "        lineHeight,",
             "    },",
             "    name: 'text-shape',",
-            "})"
+            "});"
         ],
         "description": "text Shape独有的样式"
     },
@@ -2625,7 +2638,7 @@
             " * @param data 子树的数据",
             " * @param parentId 父节点ID",
             " */",
-            "this.treeGraph.addChild(data, parentId)",
+            "this.treeGraph.addChild(data, parentId);",
             "",
             "const data = {",
             "    id: 'sub1',",
@@ -2639,9 +2652,9 @@
             "            children: []",
             "        }",
             "    ]",
-            "}",
+            "};",
             "",
-            "this.treeGraph.addChild(data, 'root')"
+            "this.treeGraph.addChild(data, 'root');"
         ],
         "description": "TreeGraph在指定的父节点下添加子树"
     },
@@ -2654,13 +2667,13 @@
             " * @param targetData 指定的数据 | null 从根节点开始查找",
             " * @returns 查找到的数据",
             " */",
-            "this.treeGraph.findDataById(id, targetData)",
+            "this.treeGraph.findDataById(id, targetData);",
             "",
             "// 从target节点开始查找sub1.1节点",
-            "const subData = this.treeGraph.findDataById('sub1.1', target)",
+            "const subData = this.treeGraph.findDataById('sub1.1', target);",
             "",
             "// 从根节点开始查找sub1.1节点",
-            "const subData = this.treeGraph.findDataById('sub1.1')"
+            "const subData = this.treeGraph.findDataById('sub1.1');"
         ],
         "description": "查找指定的ID数据"
     },
@@ -2671,7 +2684,7 @@
             " * 删除指定的子树",
             " * @param childId 子节点ID",
             " */",
-            "this.treeGraph.removeChild(childId)"
+            "this.treeGraph.removeChild(childId);"
         ],
         "description": "删除指定的子树"
     },
@@ -2684,7 +2697,7 @@
             " * @param parentId 父节点ID",
             " * parent 参数为空时，则全量更新",
             " */",
-            "this.treeGraph.updateChild(data, parentId)",
+            "this.treeGraph.updateChild(data, parentId);",
             "",
             "const data = {",
             "    id: 'sub1',",
@@ -2698,9 +2711,9 @@
             "            children: []",
             "        }",
             "    ]",
-            "}",
+            "};",
             "",
-            "this.treeGraph.updateChild(data, 'root')"
+            "this.treeGraph.updateChild(data, 'root');"
         ],
         "description": "更新数据，差量更新子树"
     },
@@ -2715,31 +2728,31 @@
             " * @return {string} 处理过后的结果",
             " */",
             "const getShowText = (str, maxWidth, fontSize) => {",
-            "    const ellipsis = '...'",
-            "    const ellipsisLength = G6.Util.getTextSize(ellipsis, fontSize)[0]",
-            "    let currentWidth = 0",
-            "    let res = str",
-            "    const pattern = new RegExp('[\\u4E00-\\u9FA5]+')",
+            "    const ellipsis = '...';",
+            "    const ellipsisLength = G6.Util.getTextSize(ellipsis, fontSize)[0];",
+            "    let currentWidth = 0;",
+            "    let res = str;",
+            "    const pattern = new RegExp('[\\u4E00-\\u9FA5]+');",
             "    str.split('').forEach((letter, i) => {",
-            "        if (currentWidth > maxWidth - ellipsisLength) return",
+            "        if (currentWidth > maxWidth - ellipsisLength) return;",
             "        if (pattern.test(letter)) {",
-            "            currentWidth += fontSize",
+            "            currentWidth += fontSize;",
             "        } else {",
-            "            currentWidth += G6.Util.getLetterWidth(letter, fontSize)",
+            "            currentWidth += G6.Util.getLetterWidth(letter, fontSize);",
             "        }",
             "        if (currentWidth > maxWidth - ellipsisLength) {",
-            "            res = `${str.substr(0, i)}\\${ellipsis}`",
+            "            res = `${str.substr(0, i)}\\${ellipsis}`;",
             "        }",
-            "    })",
-            "    return res",
-            "}"
+            "    });",
+            "    return res;",
+            "};"
         ],
         "description": "获取可能带有省略号的字符串"
     },
     "g6-version": {
         "prefix": "g6-version",
         "body": [
-            "console.log(G6.Global.version)"
+            "console.log(G6.Global.version);"
         ],
         "description": "版本"
     }

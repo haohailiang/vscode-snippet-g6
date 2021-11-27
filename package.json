@@ -1,8 +1,8 @@
 {
 	"name": "vscode-snippet-g6",
-	"displayName": "G6 common snippet",
+	"displayName": "g6",
 	"description": "G6常用代码片段",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "haohailiang",
 	"author": {
         "name": "haohailiang",
