@@ -250,7 +250,7 @@
     "g6-edge-type-common-labelcfg": {
         "prefix": "g6-edge-type-common-labelcfg",
         "body": [
-            "// [节点标签和边标签共有属性]https://g6.antv.vision/zh/docs/api/shapeProperties#文本-text",
+            "// [节点标签和边标签共有属性]https://g6.antv.antgroup.com/zh/docs/api/shape-properties#文本-text",
             "const data = {",
             "    edges: [",
             "        {",
@@ -284,7 +284,7 @@
     "g6-edge-type-common-prop": {
         "prefix": "g6-edge-type-common-prop",
         "body": [
-            "// [边总览]https://g6.antv.vision/zh/docs/manual/middle/elements/edges/defaultEdge",
+            "// [边总览]https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/edges/default-edge",
             "const data = {",
             "    edges: [",
             "        {",
@@ -306,7 +306,7 @@
     "g6-edge-type-common-style": {
         "prefix": "g6-edge-type-common-style",
         "body": [
-            "// [边样式属性]g6.antv.vision/zh/docs/manual/middle/elements/edges/defaultEdge#样式属性--style",
+            "// [边样式属性]g6.antv.antgroup.com/zh/docs/manual/middle/elements/edges/default-edge#样式属性--style",
             "const data = {",
             "    edges: [",
             "        {",
@@ -333,7 +333,7 @@
     "g6-edge-type-line": {
         "prefix": "g6-edge-type-line",
         "body": [
-            "https://antv-g6.gitee.io/zh/docs/manual/middle/elements/edges/defaultEdge#内置边类型说明",
+            "https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/edges/default-edge#内置边类型说明",
             "const data = {",
             "    edges: [",
             "        {",
@@ -382,7 +382,7 @@
     "g6-evt-canvas-click": {
         "prefix": "g6-evt-canvas-click",
         "body": [
-            "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
+            "// [可选事件]https://g6.antv.antgroup.com/zh/docs/api/Event",
             "graph.on('canvas:click', evt => {",
             "    const { clientX, clientY } = evt;",
             "    console.log('%c clientX===', 'color:#fffbackground: red', clientX);",
@@ -395,7 +395,7 @@
         "prefix": "g6-evt-common-prop",
         "body": [
             "/**",
-            "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
+            "// [可选事件]https://g6.antv.antgroup.com/zh/docs/api/Event",
             " * @param type 事件类型",
             " * @param name 事件名称",
             " * @param x 画布上的x坐标",
@@ -423,7 +423,7 @@
         "prefix": "g6-evt-common-triger",
         "body": [
             "/**",
-            "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
+            "// [可选事件]https://g6.antv.antgroup.com/zh/docs/api/Event",
             " * triggerType属性",
             " * @param click 单击鼠标左键或者按下回车键时触发",
             " * @param dblclick 双击鼠标左键时触发，同时会触发两次 click",
@@ -434,7 +434,7 @@
             " * @param mouseleave 鼠标移出元素范围时触发，该事件不冒泡，即鼠标移到其后代元素时不会触发",
             " * @param mousedown 鼠标按钮被按下（左键或者右键）时触发，不能通过键盘触发",
             " * @param mouseup 鼠标按钮被释放弹起时触发，不能通过键盘触发",
-            " * @param contextmenu 用户右击鼠标时触发并打开上下文菜单，见https://g6.antv.vision/zh/examples/tool/contextMenu",
+            " * @param contextmenu 用户右击鼠标时触发并打开上下文菜单，见https://g6.antv.antgroup.com/zh/examples/tool/context-menu",
             " * @param dragstart 当拖拽元素开始被拖拽的时候触发的事件，此事件作用在被拖曳元素上",
             " * @param drag 当拖拽元素在拖动过程中时触发的事件，此事件作用于被拖拽元素上",
             " * @param dragend 当拖拽完成后触发的事件，此事件作用在被拖曳元素上",
@@ -457,7 +457,7 @@
     "g6-evt-edge-click": {
         "prefix": "g6-evt-edge-click",
         "body": [
-            "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
+            "// [可选事件]https://g6.antv.antgroup.com/zh/docs/api/Event",
             "this.graph.on('edge:click', evt => {",
             "    const clickEdges = this.graph.findAllByState('edge', 'click');",
             "    clickEdges.forEach((ce) => {",
@@ -472,7 +472,7 @@
     "g6-evt-node-click": {
         "prefix": "g6-evt-node-click",
         "body": [
-            "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
+            "// [可选事件]https://g6.antv.antgroup.com/zh/docs/api/Event",
             "this.graph.on('node:click', evt => {",
             "    const item = evt.item; // 被操作的节点 item",
             "    const shape = evt.target; // 被操作的具体图形",
@@ -491,7 +491,7 @@
     "g6-evt-node-click-off-all-1": {
         "prefix": "g6-evt-node-click-off-all-1",
         "body": [
-            "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
+            "// [可选事件]https://g6.antv.antgroup.com/zh/docs/api/Event",
             "/**",
             " * 为图解除某事件的所有监听",
             " * @param eventName 事件名",
@@ -519,7 +519,7 @@
     "g6-evt-node-click-off-all-2": {
         "prefix": "g6-evt-node-click-off-all-2",
         "body": [
-            "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
+            "// [可选事件]https://g6.antv.antgroup.com/zh/docs/api/Event",
             "this.graph.off();",
             "",
             "// 监听函数",
@@ -541,7 +541,7 @@
     "g6-evt-node-click-off-single": {
         "prefix": "g6-evt-node-click-off-single",
         "body": [
-            "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
+            "// [可选事件]https://g6.antv.antgroup.com/zh/docs/api/Event",
             "/**",
             " * 为图解除指定的事件监听",
             " * @param eventName 事件名",
@@ -566,7 +566,7 @@
     "g6-evt-node-mouseenter": {
         "prefix": "g6-evt-node-mouseenter",
         "body": [
-            "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
+            "// [可选事件]https://g6.antv.antgroup.com/zh/docs/api/Event",
             "this.graph.on('node:mouseenter', evt => {",
             "    const nodeItem = evt.item;",
             "    this.graph.setItemState(nodeItem, 'hover', true);",
@@ -577,7 +577,7 @@
     "g6-evt-node-mouseleave": {
         "prefix": "g6-evt-node-mouseleave",
         "body": [
-            "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
+            "// [可选事件]https://g6.antv.antgroup.com/zh/docs/api/Event",
             "this.graph.on('node:mouseleave', evt => {",
             "    const nodeItem = evt.item;",
             "    this.graph.setItemState(nodeItem, 'hover', false);",
@@ -589,7 +589,7 @@
         "prefix": "g6-evt-node-triger",
         "body": [
             "/**",
-            "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
+            "// [可选事件]https://g6.antv.antgroup.com/zh/docs/api/Event",
             " * triggerType属性",
             " * @param dragover 当拖曳节点在另一目标元素上移动时触发此事件，此事件作用在目标元素上",
             " */",
@@ -602,7 +602,7 @@
     "g6-evt-shape-click": {
         "prefix": "g6-evt-shape-click",
         "body": [
-            "// [可选事件]https://g6.antv.vision/zh/docs/api/Event",
+            "// [可选事件]https://g6.antv.antgroup.com/zh/docs/api/Event",
             "// 注册自定义节点",
             "// G6.registerNode(",
             "//     'customNode',",
@@ -1148,7 +1148,7 @@
     "g6-layout-diy": {
         "prefix": "g6-layout-diy",
         "body": [
-            "// https://antv-g6.gitee.io/zh/docs/api/registerLayout/#gatsby-focus-wrapper",
+            "// https://g6.antv.antgroup.com/zh/docs/api/register-layout/#gatsby-focus-wrapper",
             "G6.registerLayout('my-radial', {",
             "    // 默认参数",
             "    getDefaultCfg: function getDefaultCfg() {",
@@ -1171,7 +1171,7 @@
     "g6-node-addItem": {
         "prefix": "g6-node-addItem",
         "body": [
-            "// [元素配置项]https://g6.antv.vision/zh/docs/api/items/itemProperties",
+            "// [元素配置项]https://g6.antv.antgroup.com/zh/docs/api/items/item-properties",
             "/**",
             " * 新增元素（节点，边，或节点分组）",
             " * @param type node | edge | group",
@@ -1244,7 +1244,7 @@
         "prefix": "g6-node-diy",
         "body": [
             "/**",
-            " * https://g6.antv.vision/zh/docs/api/Group",
+            " * https://g6.antv.antgroup.com/zh/docs/api/Group",
             " * 功能: TODO",
             " * 作者: 郝海亮",
             " * 日期: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
@@ -1371,10 +1371,10 @@
     "g6-node-type-circle": {
         "prefix": "g6-node-type-circle",
         "body": [
-            "// [circle]https://g6.antv.vision/zh/docs/manual/middle/elements/nodes/built-in/circle",
-            "// [stateStyles]https://g6.antv.vision/zh/docs/manual/middle/states/state#配置-state-样式",
-            "// [anchorpoint]https://g6.antv.vision/zh/docs/manual/middle/elements/nodes/anchorpoint",
-            "// [linkpoints]https://g6.antv.vision/zh/docs/manual/middle/elements/nodes/built-in/circle#linkpoints",
+            "// [circle]https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/nodes/built-in/circle",
+            "// [stateStyles]https://g6.antv.antgroup.com/zh/docs/manual/middle/states/state#配置-state-样式",
+            "// [anchorpoint]https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/nodes/anchorpoint",
+            "// [linkpoints]https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/nodes/built-in/circle#linkpoints",
             "const data = {",
             "    nodes: [",
             "        {",
@@ -1408,8 +1408,8 @@
     "g6-node-type-common-labelcfg": {
         "prefix": "g6-node-type-common-labelcfg",
         "body": [
-            "// https://g6.antv.vision/zh/docs/manual/middle/elements/nodes/defaultNode#标签文本-label-及其配置--labelcfg",
-            "// [节点标签和边标签共有属性]https://g6.antv.vision/zh/docs/api/shapeProperties#文本-text",
+            "// https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/nodes/default-node#标签文本-label-及其配置--labelcfg",
+            "// [节点标签和边标签共有属性]https://g6.antv.antgroup.com/zh/docs/api/shape-properties#文本-text",
             "this.graph = new G6.Graph({",
             "    defaultNode: {",
             "        labelCfg: {",
@@ -1439,8 +1439,8 @@
     "g6-node-type-common-prop": {
         "prefix": "g6-node-type-common-prop",
         "body": [
-            "// https://g6.antv.vision/zh/docs/manual/middle/elements/nodes/defaultNode#节点的通用属性",
-            "// https://antv-g6.gitee.io/zh/docs/manual/middle/elements/nodes/anchorpoint",
+            "// https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/nodes/default-node#节点的通用属性",
+            "// https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/nodes/anchorpoint",
             "const data = {",
             "    nodes: [",
             "        {",
@@ -1462,7 +1462,7 @@
     "g6-node-type-common-style": {
         "prefix": "g6-node-type-common-style",
         "body": [
-            "https://g6.antv.vision/zh/docs/manual/middle/elements/nodes/defaultNode#样式属性-style",
+            "https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/nodes/default-node#样式属性-style",
             "const data = {",
             "    nodes: [",
             "        {",
@@ -1483,7 +1483,7 @@
     "g6-node-type-image": {
         "prefix": "g6-node-type-image",
         "body": [
-            "// [imgage]https://g6.antv.vision/zh/docs/manual/middle/elements/nodes/built-in/image",
+            "// [imgage]https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/nodes/built-in/image",
             "const data = {",
             "    nodes: [",
             "        {",
@@ -1510,8 +1510,8 @@
     "g6-node-type-rect": {
         "prefix": "g6-node-type-rect",
         "body": [
-            "// [rect]https://g6.antv.vision/zh/docs/manual/middle/elements/nodes/built-in/rect",
-            "// [linkpoints]https://g6.antv.vision/zh/docs/manual/middle/elements/nodes/built-in/rect#linkpoints",
+            "// [rect]https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/nodes/built-in/rect",
+            "// [linkpoints]https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/nodes/built-in/rect#linkpoints",
             "const data = {",
             "    nodes: [",
             "        {",
@@ -1963,7 +1963,7 @@
     "g6-nodeOrEdge-update": {
         "prefix": "g6-nodeOrEdge-update",
         "body": [
-            "// [元素配置项]https://g6.antv.vision/zh/docs/api/items/itemProperties",
+            "// [元素配置项]https://g6.antv.antgroup.com/zh/docs/api/items/item-properties",
             "/**",
             " * 根据元素数据项，更新元素",
             " * @param model 包括数据和样式、文本",
@@ -2019,7 +2019,7 @@
     "g6-options-animate": {
         "prefix": "g6-options-animate",
         "body": [
-            "// https://antv-g6.gitee.io/zh/docs/manual/middle/animation",
+            "// https://g6.antv.antgroup.com/zh/docs/manual/middle/animation",
             "this.graph = new G6.Graph({",
             "    animate: true,",
             "    animateCfg: {",
@@ -2121,10 +2121,10 @@
     "g6-options-mode": {
         "prefix": "g6-options-mode",
         "body": [
-            "[交互模式]https://g6.antv.vision/zh/docs/manual/middle/states/mode",
-            "[使用多种交互模式]https://g6.antv.vision/zh/docs/manual/advanced/mode-and-custom-behavior",
-            "[内置Behavior]https://g6.antv.vision/zh/docs/manual/middle/states/defaultBehavior",
-            "[自定义交互Behavior]https://g6.antv.vision/zh/docs/manual/middle/states/custom-behavior",
+            "[交互模式]https://g6.antv.antgroup.com/zh/docs/manual/middle/states/mode",
+            "[使用多种交互模式]https://g6.antv.antgroup.com/zh/docs/manual/advanced/mode-and-custom-behavior",
+            "[内置Behavior]https://g6.antv.antgroup.com/zh/docs/manual/middle/states/default-behavior",
+            "[自定义交互Behavior]https://g6.antv.antgroup.com/zh/docs/manual/middle/states/custom-behavior",
             "this.graph = new G6.Graph({",
             "    modes: {",
             "        default: [",
@@ -2445,7 +2445,7 @@
         "prefix": "g6-shape-type-common-prop",
         "body": [
             "/**",
-            " * https://antv-g6.gitee.io/zh/docs/manual/middle/elements/shape/shape-and-properties#%E5%90%84%E5%9B%BE%E5%BD%A2-shape-%E7%9A%84%E9%80%9A%E7%94%A8%E5%B1%9E%E6%80%A7",
+            " * https://g6.antv.antgroup.com/zh/docs/manual/middle/elements/shape/shape-and-properties#%E5%90%84%E5%9B%BE%E5%BD%A2-shape-%E7%9A%84%E9%80%9A%E7%94%A8%E5%B1%9E%E6%80%A7",
             " * 图形样式通用属性",
             " * @param capture 该图形是否可以被鼠标事件捕捉到，即是否能够响应各鼠标事件。非必须指定",
             " * @param visible 该图形是否可见",
